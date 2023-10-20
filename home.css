@@ -1,0 +1,566 @@
+Reset styles and set a common font family
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Style the body with a background color */
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #29292a, #d8d6e4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+/* navigation */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --border-radius: 4rem;
+    --container-width-height: var(--border-radius);
+    --font-size: 2rem;
+    --menu-item-color: #fff;
+    --menu-item-hover-color: #00ffff;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    padding:.1rem;
+    background: linear-gradient(to bottom, #0a0acd, #d8d6e4);
+    position: relative;
+    margin-top: 10px;
+  
+}
+
+.plus {
+    font-size: var(--font-size);
+    font-weight: bolder;
+    width: var(--container-width-height);
+    height: var(--container-width-height);
+    border-radius: 50%;
+    background-color: rgb(203, 191, 191);
+    color: var(--menu-item-color);
+    border: 4px solid white;
+    transition: transform 1s ease-in-out;
+    cursor: pointer;
+    z-index: 1;
+    
+}
+
+/* active */
+.menu-container.active .plus {
+    transform: rotate(360deg);
+}
+/* active */
+
+ul.menu {
+    width: 0px;
+    transition: width 1s ease-in-out;
+}
+
+ul.menu li.menu-item {
+    list-style: none;
+    margin: 0 1rem;
+}
+
+/* active */
+.menu-container.active ul.menu {
+    width: min(20rem, 70vw);
+}
+/* active */
+
+li.menu-item a {
+    text-decoration: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    transition-delay: 1.1s;
+}
+
+/* active */
+.menu-container.active li.menu-item a {
+    visibility: visible;
+    opacity: 1;
+}
+/* active */
+
+
+li.menu-item a i {
+    font-size: var(--font-size);
+    color: var(--menu-item-color);
+    position: relative;
+}
+
+li.menu-item a i::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--menu-item-hover-color);
+    bottom: -0.75rem;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform .25s ease-in-out;
+}
+
+li.menu-item a:hover i {
+    color: var(--menu-item-hover-color);
+}
+
+li.menu-item a:hover i::after {
+    transform: scaleX(1);
+}
+
+
+/* now lets control it using js */
+
+/* Amazing */
+/* Have a good time */
+
+/* Hero Section styles */
+.hero {
+    background-image: url('hero-bg.jpg'); /* Replace with your hero background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #00ffff;
+    color: #333;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #00ccff;
+}
+
+/* Featured Products Section styles */
+.featured-products {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.featured-products h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Apply these styles to elements with the "product-card" class */
+
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 200px;
+    height: 250px;
+
+}
+
+.product-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    font-size: 10px;
+}
+
+button{
+    background-color: #00ccff;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 50px;
+    border:none;
+    margin-bottom: 15px;
+    
+}
+
+
+button:hover {
+    background-color: #00aacc;
+}
+
+/* About Us Section styles */
+.about-us {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+    text-align: center;
+    /* display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px; */
+}
+
+.about-us h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Contact Section styles */
+.contact {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* Footer Styles */
+.site-footer {
+    background-color: #29292a;
+    color: #fff;
+    padding: 30px 100px;
+   
+}
+
+.fcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-logo img {
+    width: 2rem ;/* Adjust the size as needed */
+    height: auto;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.footer-navigation {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-navigation h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Footer Navigation Styles */
+.footer-navigation ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.footer-navigation ul li {
+    margin-bottom: 10px;
+    color: red;
+}
+
+.footer-navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-navigation ul li a:hover {
+    color: #00ffff;
+}
+
+/* Footer Newsletter Styles */
+.footer-newsletter {
+    flex: 1;
+}
+
+.footer-newsletter h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* hover */
+/* Add hover effect to list items */
+.footer-social ul li:hover {
+    color: #00ffff; /* Change the background color on hover */
+    border-radius: 5px; /* Add rounded corners on hover */
+    transition:color 0.3s; /* Smooth transition for the background color */
+}
+
+
+.footer-newsletter p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+
+/* .footer-newsletter form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+} */
+
+/* .footer-newsletter form button {
+    background-color: #00ffff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+} */
+
+/* .footer-newsletter form button:hover {
+    background-color: #009999;
+}
+
+
+.footer-newsletter form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+} */
+
+/* .footer-newsletter form button {
+    background-color: #00ffff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+} */
+
+.footer-newsletter form button:hover {
+    background-color: #009999;
+}
+/* social */
+.footer-social{
+    flex: 1;
+    margin-left: 30px;
+   
+}
+.footer-social h4{
+   margin-left: 32px;
+   margin-bottom: 10px;
+   font-size: 18px;
+}
+
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style the list items */
+.footer-social ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+/* Style the link and image inside list items */
+.footer-social ul li a {
+    text-decoration: none;
+    color: #333; /* Link text color */
+    margin-left: 30px;
+}
+
+ .footer-social ul li img {
+    max-width: 24px; /* Adjust the image size as needed */
+    height: auto;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+/* Add hover effect to the links */
+ul li a:hover {
+    color: #00ccff; /* Hover color */
+}
+
+
+
+.bottom-footer {
+    background-color: #d5d5e91b;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-footer p {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.bottom-footer p:last-child {
+    font-size: 14px;
+}
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 500px) {
+   
+    body {
+        font-size: 14px;
+    }
+    .hero-content h1 {
+        font-size: 30px;
+    }
+    .product-card{
+        flex: 0 0 calc(50% - 20px);
+      }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .about-us {
+        padding: 30px 0;
+    }
+
+    .about-us h2 {
+        font-size: 20px;
+    }
+
+    .about-us p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+    }
+
+ 
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-navigation,
+    .footer-newsletter,
+    .footer-social {
+        flex: 1;
+        margin: 0;
+    }
+
+    .footer-logo img {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+
+    .footer-navigation ul li,
+    .footer-newsletter p,
+    .footer-social ul li {
+        margin-bottom: px;
+    }
+
+}

@@ -1,0 +1,288 @@
+/* Reset styles and set a common font family */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Style the body with a background color */
+body {
+    width: 100%;
+    min-height: 100vh;
+    /* background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); */
+    background-color:#ffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+/* navigation */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --border-radius: 4rem;
+    --container-width-height: var(--border-radius);
+    --font-size: 2rem;
+    --menu-item-color: #fff;
+    --menu-item-hover-color: #00ffff;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* button */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    padding: .1rem;
+    background: linear-gradient(to right, #c4e0ef, #bce3e0);
+    position: relative;
+    margin-top: 10px;
+    
+}
+
+.plus {
+    font-size: var(--font-size);
+    font-weight: bolder;
+    width: var(--container-width-height);
+    height: var(--container-width-height);
+    border-radius: 50%;
+    background-color: rgb(203, 191, 191);
+    color: var(--menu-item-color);
+    border: 4px solid white;
+    transition: transform 1s ease-in-out;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* active */
+.menu-container.active .plus {
+    transform: rotate(360deg);
+}
+/* active */
+
+ul.menu {
+    width: 0px;
+    transition: width 1s ease-in-out;
+}
+
+ul.menu li.menu-item {
+    list-style: none;
+    margin: 0 1rem;
+}
+
+/* active */
+.menu-container.active ul.menu {
+    width: min(20rem, 70vw);
+}
+/* active */
+
+li.menu-item a {
+    text-decoration: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    transition-delay: 1.1s;
+}
+
+/* active */
+.menu-container.active li.menu-item a {
+    visibility: visible;
+    opacity: 1;
+}
+/* active */
+
+
+li.menu-item a i {
+    font-size: var(--font-size);
+    color: var(--menu-item-color);
+    position: relative;
+}
+
+li.menu-item a i::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--menu-item-hover-color);
+    bottom: -0.75rem;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform .25s ease-in-out;
+}
+
+li.menu-item a:hover i {
+    color: var(--menu-item-hover-color);
+}
+
+li.menu-item a:hover i::after {
+    transform: scaleX(1);
+}
+
+
+/* now lets control it using js */
+
+/* Amazing */
+/* Have a good time */
+
+/* ends navigation */
+
+/* Create a container for the content */
+.container {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+ 
+    background-color: #f8f8f8;
+
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    overflow-y: scroll;
+    max-height: 520px;
+    /* Hide scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    margin-top: 20px;
+}
+
+/* Remove scrollbar on Webkit browsers */
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Hide scrollbar track */
+.container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Style scrollbar thumb */
+.container::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+
+
+
+
+
+/* Style the search form */
+.container form {
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #eee8e8;
+}
+
+/* Style the search input */
+.container form input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 18px;
+    background-color: #eeeaea;
+}
+
+/* Style the search icon */
+.container form i {
+    padding: 0 10px;
+    color: #333;
+}
+
+/* Create a product list */
+.product-list {
+    padding: 20px 0;
+}
+
+a{
+    text-decoration: none;
+    color: #1d1d1d;
+   
+}
+
+/* Style individual products */
+.product {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    border: 2px solid #333;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    height:100px;
+    border: 1px solid;
+    margin-top: 10px;
+}
+
+.product:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.03);
+}
+
+.product img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+    border-radius: 1px solid;
+    border-radius: 10px;
+}
+
+.product .p-details {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.product .p-details h2 {
+    font-size: 15px;
+    color: #1d1d1d;
+    margin-bottom: 5px;
+}
+
+.product .p-details h3 {
+    font-size: 18px;
+    color: #555;
+    margin-top: 5px;
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 270px) {
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .container form {
+        flex-direction: column;
+    }
+
+    .container form input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
